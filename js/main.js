@@ -7,6 +7,8 @@
  **************************************************************************************************************************/
 
 var rndNum = [];
+var playerInputs = [];
+var time = 3;
 
 for ( var i = 0; rndNum.length < 5; i++) {
     var item = Math.floor( Math.random() * 1000) + 1;
@@ -17,4 +19,24 @@ for ( var i = 0; rndNum.length < 5; i++) {
     }
 }
 
-console.log(rndNum);
+alert(rndNum);
+
+var cntDwn = setInterval(function() {
+    console.log(time);
+    if (time == 0) {
+        clearInterval(cntDwn);
+    } else {
+        time -= 1;
+    }
+}, 1000);
+
+setTimeout(function () {
+    for ( var i = 0; i < 5; i++) {
+        var input = parseInt(prompt('Inserisci un numero'));
+        playerInputs.push(input);
+    }
+    console.log(playerInputs);
+}, 4000);
+
+
+
