@@ -8,7 +8,8 @@
 
 var rndNum = [];
 var playerInputs = [];
-var time = 3;
+var matching = [];
+var time = 30;
 
 for ( var i = 0; rndNum.length < 5; i++) {
     var item = Math.floor( Math.random() * 1000) + 1;
@@ -35,8 +36,16 @@ setTimeout(function () {
         var input = parseInt(prompt('Inserisci un numero'));
         playerInputs.push(input);
     }
-    console.log(playerInputs);
-}, 4000);
+    for ( var i = 0; i < rndNum.length; i++) {
+        var toMatch = playerInputs[i];
+        if ( rndNum.includes(toMatch) ) {
+            matching.push(toMatch);
+        }
+    }
+    console.log('Numeri da ricordare:', rndNum);
+    console.log('Punteggio:', matching.length);
+    console.log('Numeri indovinati:', matching);
+}, 31000);
 
 
 
