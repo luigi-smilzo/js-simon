@@ -45,8 +45,13 @@ setTimeout(function () {
         while ( (input < 1 || input > 1000) || isNaN(input) ) {
             input = parseInt(prompt('Per favore, inserisci un numero da 1 a 1000'));
         }
-
-        playerInputs.push(input);
+        
+        if( !playerInputs.includes(input)) {
+            playerInputs.push(input);
+        } else {
+            alert('Numero già inserito!');
+            i--
+        }
     }
 
     // Checking results...
